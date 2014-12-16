@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/loser"
+        android:gravity="center_vertical" >
+        
+    
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewLoser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1710469862664561/6930249531" />
+        
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:textSize="32sp"
+        android:text="Restart" />
+
+    <Button
+        android:id="@+id/show_leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/restart"
+        android:textSize="32sp"
+        android:background="@android:color/transparent"
+        android:text="Leaderboard" />
+
+    <TextView
+        android:id="@+id/high_score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="High Score: "
+        android:textSize="20sp" />
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llend1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llend2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llend3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llend4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llend5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+             
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</RelativeLayout>
+
+

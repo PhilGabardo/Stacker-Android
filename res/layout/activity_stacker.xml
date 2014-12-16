@@ -1,0 +1,373 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+            <TextView
+  			android:id="@+id/scoreLabel"
+  			android:layout_width="fill_parent"
+  			android:layout_height="fill_parent"
+  			android:gravity="center"/>
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+        
+              <TextView
+  			android:id="@+id/livesLabel"
+  			android:layout_width="fill_parent"
+  			android:layout_height="fill_parent"
+  			android:gravity="center"/>
+             
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll12"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll13"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll18"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll19"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll21"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll22"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll23"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll24"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll26"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+        <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll28"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+         <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll29"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+    
+          <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll30"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        
+        
+    </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>
