@@ -6,3 +6,7 @@ A challenging arcade game which entails stacking moving blocks up the screen. As
 - Heart: extra 3 lives
 - Turtle: reduced block speed
 - Coins: 50 extra points
+
+
+Requires google-play-services and BaseGameActivity APIs.
+Ad unit IDs are set to <PRIVATE> for privacy.
