@@ -88,7 +88,7 @@ public class StartScreen extends Activity {
 		// Prepare the Interstitial Ad
 		interstitial = new InterstitialAd(StartScreen.this);
 		// Insert the Ad Unit ID
-		interstitial.setAdUnitId("ca-app-pub-1710469862664561/8267381932");
+		interstitial.setAdUnitId("<PRIVATE>");
 		 
 		//Locate the Banner Ad in activity_main.xml
 		AdView adView = (AdView) this.findViewById(R.id.adView);
