@@ -87,99 +87,99 @@ public class LoserScreen extends BaseGameActivity  implements View.OnClickListen
 		highScoreToast = new Toast(getBaseContext());
 		seasrn = Typeface.createFromAsset(getAssets(), "fonts/seasrn.ttf");
 		outOfLivesToast = Toast.makeText(getBaseContext(),"Done", Toast.LENGTH_LONG);
-        outOfLivesToast.setGravity(Gravity.TOP, outOfLivesToast.getXOffset() / 2, outOfLivesToast.getYOffset() / 2);
-        TextView textView = new TextView(getBaseContext());
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(30);
-        textView.setText("Out of lives!");
-        textView.setTypeface(seasrn);
-        textView.setPadding(10, 10, 10, 10);
-        outOfLivesToast.setView(textView);
-        outOfLivesToast.show();
-        TextView highScoreLabel = (TextView) findViewById(R.id.high_score_label);
-        highScoreLabel.setTextColor(Color.WHITE);
-        highScoreLabel.setTypeface(seasrn);
-        highScoreLabel.bringToFront();
-        Button leaderboard = (Button) findViewById(R.id.show_leaderboard);
-        leaderboard.setTypeface(seasrn);
-        leaderboard.bringToFront();
-        leaderboard.setTextColor(Color.WHITE);
-        Button restart = (Button) findViewById(R.id.restart);
-        restart.setTypeface(seasrn);
-        restart.bringToFront();
-        restart.setTextColor(Color.WHITE);
-        llend[0] = (LinearLayout) findViewById(R.id.llend1);
+	        outOfLivesToast.setGravity(Gravity.TOP, outOfLivesToast.getXOffset() / 2, outOfLivesToast.getYOffset() / 2);
+	        TextView textView = new TextView(getBaseContext());
+	        textView.setTextColor(Color.WHITE);
+	        textView.setTextSize(30);
+	        textView.setText("Out of lives!");
+	        textView.setTypeface(seasrn);
+	        textView.setPadding(10, 10, 10, 10);
+	        outOfLivesToast.setView(textView);
+	        outOfLivesToast.show();
+	        TextView highScoreLabel = (TextView) findViewById(R.id.high_score_label);
+	        highScoreLabel.setTextColor(Color.WHITE);
+	        highScoreLabel.setTypeface(seasrn);
+	        highScoreLabel.bringToFront();
+	        Button leaderboard = (Button) findViewById(R.id.show_leaderboard);
+	        leaderboard.setTypeface(seasrn);
+	        leaderboard.bringToFront();
+	        leaderboard.setTextColor(Color.WHITE);
+	        Button restart = (Button) findViewById(R.id.restart);
+	        restart.setTypeface(seasrn);
+	        restart.bringToFront();
+	        restart.setTextColor(Color.WHITE);
+	        llend[0] = (LinearLayout) findViewById(R.id.llend1);
 		llend[1] = (LinearLayout) findViewById(R.id.llend2);
 		llend[2] = (LinearLayout) findViewById(R.id.llend3);
 		llend[3] = (LinearLayout) findViewById(R.id.llend4);
 		llend[4] = (LinearLayout) findViewById(R.id.llend5);
         
         
-        //handle high score
-    	highscore = getHighScore(); 
-    	
-    	//new high score
-        if(highscore < score){
-        	setHighScore(score);
-        	
-        	//display toast
-	        highScoreToast = Toast.makeText(getBaseContext(),"Done", Toast.LENGTH_LONG);
-	        highScoreToast.setGravity(Gravity.BOTTOM, highScoreToast.getXOffset() / 2, highScoreToast.getYOffset() / 2);
-		    TextView textViewHS = new TextView(getBaseContext());
-		    textViewHS.setTextColor(Color.RED);
-		    textViewHS.setTextSize(30);
-		    textViewHS.setText("New high score!");
-		    textViewHS.setTypeface(seasrn);
-		    textViewHS.setPadding(10, 10, 10, 10);
-		    highScoreToast.setView(textViewHS);
-		    highScoreToast.show();
-		    highScoreLabel.setText("High Score: " + score);
-        }
-        else{
-        	highScoreLabel.setText("High Score: " + highscore);
-         }
-        
-        
-        // view leaderboard
-        leaderboard.setOnClickListener(new OnClickListener() {
-
-	         @Override
-	         public void onClick(View v) {
-	        	 outOfLivesToast.cancel();
-	        	 highScoreToast.cancel();
-	        	 if(isSignedIn()){
-	        		 Games.Leaderboards.submitScoreImmediate(getApiClient(),
-	        	                getString(R.string.number_guesses_leaderboard),
-	        	                score).setResultCallback(new myLeaderBoardSubmitScoreCallback());
-	        	 }
-	        	 else{
-	        		 beginUserInitiatedSignIn();
-	        	 }
-	        	 
+	        //handle high score
+	    	highscore = getHighScore(); 
+	    	
+	    	//new high score
+	        if(highscore < score){
+	        	setHighScore(score);
+	        	
+	        	//display toast
+		        highScoreToast = Toast.makeText(getBaseContext(),"Done", Toast.LENGTH_LONG);
+		        highScoreToast.setGravity(Gravity.BOTTOM, highScoreToast.getXOffset() / 2, highScoreToast.getYOffset() / 2);
+			    TextView textViewHS = new TextView(getBaseContext());
+			    textViewHS.setTextColor(Color.RED);
+			    textViewHS.setTextSize(30);
+			    textViewHS.setText("New high score!");
+			    textViewHS.setTypeface(seasrn);
+			    textViewHS.setPadding(10, 10, 10, 10);
+			    highScoreToast.setView(textViewHS);
+			    highScoreToast.show();
+			    highScoreLabel.setText("High Score: " + score);
+	        }
+	        else{
+	        	highScoreLabel.setText("High Score: " + highscore);
 	         }
-
-	      });
         
-        // restart game
-        restart.setOnClickListener(new OnClickListener() {
-
-	         @Override
-	         public void onClick(View v) {
-	        	 outOfLivesToast.cancel();
-	        	 highScoreToast.cancel();
-	        	 Intent intent = new Intent(getBaseContext(), Stacker.class); 
-	        	 intent.putExtra("score", "0");
-	        	 intent.putExtra("lives", "3");
-	        	 intent.putExtra("level", "1");
-	        	 startActivity(intent);
-	         }
-
-	      });
+        
+	        // view leaderboard
+	        leaderboard.setOnClickListener(new OnClickListener() {
+	
+		         @Override
+		         public void onClick(View v) {
+		        	 outOfLivesToast.cancel();
+		        	 highScoreToast.cancel();
+		        	 if(isSignedIn()){
+		        		 Games.Leaderboards.submitScoreImmediate(getApiClient(),
+		        	                getString(R.string.number_guesses_leaderboard),
+		        	                score).setResultCallback(new myLeaderBoardSubmitScoreCallback());
+		        	 }
+		        	 else{
+		        		 beginUserInitiatedSignIn();
+		        	 }
+		        	 
+		         }
+	
+		      });
+	        
+	        // restart game
+	        restart.setOnClickListener(new OnClickListener() {
+	
+		         @Override
+		         public void onClick(View v) {
+		        	 outOfLivesToast.cancel();
+		        	 highScoreToast.cancel();
+		        	 Intent intent = new Intent(getBaseContext(), Stacker.class); 
+		        	 intent.putExtra("score", "0");
+		        	 intent.putExtra("lives", "3");
+		        	 intent.putExtra("level", "1");
+		        	 startActivity(intent);
+		         }
+	
+		      });
 		
 		// Prepare the Interstitial Ad
 		interstitial = new InterstitialAd(LoserScreen.this);
 		// Insert the Ad Unit ID
-		interstitial.setAdUnitId("ca-app-pub-1710469862664561/6930249531");
+		interstitial.setAdUnitId("<PRIVATE>");
 		 
 		//Locate the Banner Ad in activity_main.xml
 		AdView adView = (AdView) this.findViewById(R.id.adViewLoser);
