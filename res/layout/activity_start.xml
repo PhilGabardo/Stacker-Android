@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-1710469862664561/8267381932" />
+        ads:adUnitId="<PRIVATE>" />
     
     
     <TextView
