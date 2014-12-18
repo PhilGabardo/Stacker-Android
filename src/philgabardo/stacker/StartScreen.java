@@ -64,25 +64,25 @@ public class StartScreen extends Activity {
 		clickanywhere.bringToFront();
 		stackerlogo.bringToFront();
 		llstartMain = (RelativeLayout) findViewById(R.id.startGame);
-	    llstartMain.setOnClickListener(new OnClickListener() {
-
-	         @Override
-	         public void onClick(View v) {
-	        	 Intent intent = new Intent(getBaseContext(), Stacker.class); 
-	        	 intent.putExtra("level", "1");
-	        	 intent.putExtra("lives", "3");
-	        	 intent.putExtra("score", "0");
-	        	 startActivity(intent);
-	         }
-
-	      });
+		llstartMain.setOnClickListener(new OnClickListener() {
+	
+		         @Override
+		         public void onClick(View v) {
+		        	 Intent intent = new Intent(getBaseContext(), Stacker.class); 
+		        	 intent.putExtra("level", "1");
+		        	 intent.putExtra("lives", "3");
+		        	 intent.putExtra("score", "0");
+		        	 startActivity(intent);
+		         }
+	
+		      });
 	    
-	    // start timer for updating ui
-	    Timer myTimer = new Timer();
-	      myTimer.schedule(new TimerTask() {
+	        // start timer for updating ui
+	       Timer myTimer = new Timer();
+		myTimer.schedule(new TimerTask() {
 	         @Override
 	         public void run() {UpdateGUI();}
-	      }, 0, 500);
+	        }, 0, 500);
 		
 		
 		// Prepare the Interstitial Ad
