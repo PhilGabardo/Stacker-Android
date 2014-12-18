@@ -82,15 +82,15 @@ public class Stacker extends Activity {
 		scoreLabel.setTypeface(myTypeface);
 		powerUpToast = new Toast(getBaseContext());
 		levelToast = Toast.makeText(getBaseContext(),"Level", Toast.LENGTH_LONG);
-        levelToast.setGravity(Gravity.CENTER, levelToast.getXOffset() / 2, levelToast.getYOffset() / 2);
-        TextView textView = new TextView(getBaseContext());
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(30);
-        textView.setText("LEVEL " + level);
-        textView.setTypeface(myTypeface);
-        textView.setPadding(10, 10, 10, 10);
-        levelToast.setView(textView);
-        levelToast.show();
+	        levelToast.setGravity(Gravity.CENTER, levelToast.getXOffset() / 2, levelToast.getYOffset() / 2);
+	        TextView textView = new TextView(getBaseContext());
+	        textView.setTextColor(Color.WHITE);
+	        textView.setTextSize(30);
+	        textView.setText("LEVEL " + level);
+	        textView.setTypeface(myTypeface);
+	        textView.setPadding(10, 10, 10, 10);
+	        levelToast.setView(textView);
+	        levelToast.show();
 		ll[0][0] = (LinearLayout) findViewById(R.id.ll1);
 		ll[0][1] = (LinearLayout) findViewById(R.id.ll2);
 		ll[0][2] = (LinearLayout) findViewById(R.id.ll3);
@@ -147,112 +147,109 @@ public class Stacker extends Activity {
 		       public void run() {UpdateGUI();}
 		    }, 0, (long) ((long) -90*Math.log(level)+300));
 	      
-	    llMain = (LinearLayout) findViewById(R.id.ll);
+	    	llMain = (LinearLayout) findViewById(R.id.ll);
 	    
-	    //click handler (if block stacks, move to next row or level, otherwise, start from bottom or go to loser screen)
-	    llMain.setOnClickListener(new OnClickListener() {
+	    	//click handler (if block stacks, move to next row or level, otherwise, start from bottom or go to loser screen)
+	    	llMain.setOnClickListener(new OnClickListener() {
 
-	         @Override
-	         public void onClick(View v) {
+	         	@Override
+	         	public void onClick(View v) {
 	        	 
-	        	 //dont update ui on pause
-	        	 pause = true;
+	        	 	//dont update ui on pause
+	        	 	pause = true;
 	        	 
-	        	 //column index unchosen
-	        	 if(chosenIndex == -1){
-	        		 chosenIndex = colPoint;
-	        		 
-	        		 //colour block above chosen block(seems smoother)
-	        		 setBackground(ll[rowPoint-1][chosenIndex],R.drawable.highlightedblock);
-	        		 
-	        		 //if power up clicked, set invisible
-	        		 if(checkPowerUp()){
-		        		 powerUp.icon.setVisibility(View.GONE);
+	        	 	//column index unchosen
+	        	 	if(chosenIndex == -1){
+		        		 chosenIndex = colPoint;
+		        		 
+		        		 //colour block above chosen block(seems smoother)
+		        		 setBackground(ll[rowPoint-1][chosenIndex],R.drawable.highlightedblock);
+		        		 
+		        		 //if power up clicked, set invisible
+		        		 if(checkPowerUp()){
+			        		 powerUp.icon.setVisibility(View.GONE);
+			        	 }
+		        		 
+		        		 //recolor row
+		        		 for(int i = 0 ; i < ll[rowPoint].length; i++){
+	    					 if(i==chosenIndex){
+	    						 setBackground(ll[rowPoint][i],R.drawable.highlightedblock);
+	    					 }
+	    					 else{
+	    						 setBackground(ll[rowPoint][i],R.drawable.normalblock);
+	    					 }
+	    				 }
+		        		 
+		        		 //move to next row
+		        		 rowPoint--;
 		        	 }
-	        		 
-	        		 //recolor row
-	        		 for(int i = 0 ; i < ll[rowPoint].length; i++){
-    					 if(i==chosenIndex){
-    						 setBackground(ll[rowPoint][i],R.drawable.highlightedblock);
-    					 }
-    					 else{
-    						 setBackground(ll[rowPoint][i],R.drawable.normalblock);
-    					 }
-    				 }
-	        		 
-	        		 //move to next row
-	        		 rowPoint--;
-	        		 
-	        		 
-    	
-	        	 }
-	        	 else{
-	        		 
-	        		 // if power up clicked, set invisible
-	        		 if(checkPowerUp()){
-	        			 powerUp.icon.setVisibility(View.GONE);
+		        	 else{
+		        		 
+		        		 // if power up clicked, set invisible
+		        		 if(checkPowerUp()){
+		        			 powerUp.icon.setVisibility(View.GONE);
+			        	 }
+		        		 
+		        		 // block stacked
+		        		 if(colPoint==chosenIndex){
+		        			 //next level
+		        			 if(rowPoint == 0){
+		        				 //stop ui updater and cancel toasts, then move to next level
+		        				 myTimer.cancel();
+		        				 myTimer.purge();
+		        				 powerUpToast.cancel();
+		        				 levelToast.cancel();
+		        				 Intent intent = new Intent(getBaseContext(), Stacker.class); 
+		        	        	 intent.putExtra("level", ""+(level+1)+"");
+		        	        	 intent.putExtra("lives", ""+lives+"");
+		        	        	 intent.putExtra("score", ""+(score+100)+"");
+		        	        	 startActivity(intent);
+		        			 }
+		        			 //next row
+		        			 else{
+		        				//colour block above chosen block(seems smoother)
+		        				 setBackground(ll[rowPoint-1][chosenIndex],R.drawable.highlightedblock);
+		        				 
+		        				//recolor row
+		        				 for(int i = 0 ; i < ll[rowPoint].length; i++){
+		        					 if(i==chosenIndex){
+		        						 setBackground(ll[rowPoint][i],R.drawable.highlightedblock);
+		        					 }
+		        					 else{
+		        						 setBackground(ll[rowPoint][i],R.drawable.normalblock);
+		        					 }
+		        				 }
+		        				 //next row
+		        				 rowPoint--;
+		        			 }
+		        		 }
+		        		 else{
+		        			 
+		        			 //reset blocks and start from row 1
+		        			 for(int i = 0; i < ll.length; i++){
+		        					for(int j = 0; j < ll[i].length; j++){
+		        						setBackground(ll[i][j], R.drawable.normalblock);
+		        					}
+		        				}
+		        			 rowPoint = 5;
+		        			 chosenIndex = -1;
+		        			 lives = lives - 1;
+		        			 
+		        			 // if out of lives, go to loser screen
+		        			 if(lives == 0){
+		        				 myTimer.cancel();
+		        				 myTimer.purge();
+		        				 powerUpToast.cancel();
+		        				 levelToast.cancel();
+		        				 Intent intent = new Intent(getBaseContext(), LoserScreen.class); 
+		        				 intent.putExtra("score", ""+score+"");
+		        	        	 startActivity(intent);
+		        			 }
+		        			 setLives();
+		        		 }
 		        	 }
-	        		 
-	        		 // block stacked
-	        		 if(colPoint==chosenIndex){
-	        			 //next level
-	        			 if(rowPoint == 0){
-	        				 //stop ui updater and cancel toasts, then move to next level
-	        				 myTimer.cancel();
-	        				 myTimer.purge();
-	        				 powerUpToast.cancel();
-	        				 levelToast.cancel();
-	        				 Intent intent = new Intent(getBaseContext(), Stacker.class); 
-	        	        	 intent.putExtra("level", ""+(level+1)+"");
-	        	        	 intent.putExtra("lives", ""+lives+"");
-	        	        	 intent.putExtra("score", ""+(score+100)+"");
-	        	        	 startActivity(intent);
-	        			 }
-	        			 //next row
-	        			 else{
-	        				//colour block above chosen block(seems smoother)
-	        				 setBackground(ll[rowPoint-1][chosenIndex],R.drawable.highlightedblock);
-	        				 
-	        				//recolor row
-	        				 for(int i = 0 ; i < ll[rowPoint].length; i++){
-	        					 if(i==chosenIndex){
-	        						 setBackground(ll[rowPoint][i],R.drawable.highlightedblock);
-	        					 }
-	        					 else{
-	        						 setBackground(ll[rowPoint][i],R.drawable.normalblock);
-	        					 }
-	        				 }
-	        				 //next row
-	        				 rowPoint--;
-	        			 }
-	        		 }
-	        		 else{
-	        			 
-	        			 //reset blocks and start from row 1
-	        			 for(int i = 0; i < ll.length; i++){
-	        					for(int j = 0; j < ll[i].length; j++){
-	        						setBackground(ll[i][j], R.drawable.normalblock);
-	        					}
-	        				}
-	        			 rowPoint = 5;
-	        			 chosenIndex = -1;
-	        			 lives = lives - 1;
-	        			 
-	        			 // if out of lives, go to loser screen
-	        			 if(lives == 0){
-	        				 myTimer.cancel();
-	        				 myTimer.purge();
-	        				 powerUpToast.cancel();
-	        				 levelToast.cancel();
-	        				 Intent intent = new Intent(getBaseContext(), LoserScreen.class); 
-	        				 intent.putExtra("score", ""+score+"");
-	        	        	 startActivity(intent);
-	        			 }
-	        			 setLives();
-	        		 }
-	        	 }
-	        	 //ui can update now
-	        	 pause = false;
+		        	 //ui can update now
+		        	 pause = false;
 	        	 
 	         }
 
